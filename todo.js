@@ -125,3 +125,20 @@ document.getElementById("novaTarefa").addEventListener("click", limitadorDeTaref
 //document.getElementById("botao-criar").addEventListener("click", criarTarefa);
 var contadorNovaTarefa2 = 1;
 
+document.addEventListener("keypress", function(e) {
+
+    if (e.key === "Enter") {
+
+        const btn = document.querySelector("#botao-criar");
+
+        btn.click();
+    }
+
+}
+);
+
+const progresso = document.querySelector(".barra div")
+const input = document.querySelector("input");
+const alterarProgresso = () => {
+    progresso.setAttribute("style", "width: " + input.value + "%"); 
+}
