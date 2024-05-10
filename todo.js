@@ -34,7 +34,7 @@ function novaTarefa(){
                 let botaoCriar = document.createElement("button");
                 botaoCriar.id = "botao-criar";
 
-                let textoBotaoCriar = document.createTextNode("criar");
+                let textoBotaoCriar = document.createTextNode("Criar");
                 botaoCriar.appendChild(textoBotaoCriar);
 
                 let criarNovaTarefa = document.createElement("input");
@@ -96,10 +96,7 @@ function criarTarefa(){
         return "proximo" 
     }else{
         alert("Você não pode criar tarefas vazias!")
-    }
-
-    
-
+    }   
 }
 
 function criarId(){
@@ -113,32 +110,14 @@ function criarId(){
 function limitadorDeTarefas(){
     if (document.getElementById("botao-criar") == null){
         novaTarefa()
-        document.getElementById("botao-criar").addEventListener("click", criarTarefa);
+        document.getElementById("botao-criar").addEventListener("click", criarTarefa,);
         
     }else{
         alert("Você só pode criar uma tarefa de cada vez!!!!!!!")
-    }
-    
+    } 
 }
 
 document.getElementById("novaTarefa").addEventListener("click", limitadorDeTarefas);
 //document.getElementById("botao-criar").addEventListener("click", criarTarefa);
 var contadorNovaTarefa2 = 1;
 
-document.addEventListener("keypress", function(e) {
-
-    if (e.key === "Enter") {
-
-        const btn = document.querySelector("#botao-criar");
-
-        btn.click();
-    }
-
-}
-);
-
-const progresso = document.querySelector(".barra div")
-const input = document.querySelector("input");
-const alterarProgresso = () => {
-    progresso.setAttribute("style", "width: " + input.value + "%"); 
-}
